@@ -1,7 +1,7 @@
 <template>
   <transition name="fade" appear>
-    <div class="popup">
-      <div class="content">
+    <div class="popup" ref="popup">
+      <div class="content" ref="content">
         <span class="content__close" @click="closePopup">×</span>
 
         <div class="content__wrap">
@@ -16,12 +16,12 @@
             <div v-else class="preload">
               <img class="preload__img" src="@/static/spinner.gif" />
             </div>
-
           </div>
           <form class="submit" @submit.prevent="onSubmit">
-                        <div class="error" v-if="errorMessage">
+            <div class="error" v-if="errorMessage">
               {{ errorMessage }}
-            </div><input
+            </div>
+            <input
               required
               v-model="name"
               class="submit__info"
@@ -87,6 +87,14 @@ export default {
     this.image = await this.$axios.$get(
       `https://boiling-refuge-66454.herokuapp.com/images/${this.imgId}`
     );
+  },
+  created() {
+    let vm = this;
+    document.addEventListener("click", function (item) {
+      if (item.target == vm.$refs["popup"]) {
+        vm.closePopup();
+      }
+    });
   },
   methods: {
     closePopup() {
@@ -311,7 +319,7 @@ input {
     padding: 0 17px 0 0;
     height: auto;
   }
- 
+
   .submit {
     order: 1;
     margin-top: 10px;
