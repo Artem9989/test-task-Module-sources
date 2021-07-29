@@ -1,7 +1,7 @@
 <template>
   <transition name="fade" appear>
     <div class="popup" ref="popup">
-      <div class="content" ref="content">
+      <div class="content">
         <span class="content__close" @click="closePopup">×</span>
 
         <div class="content__wrap">
