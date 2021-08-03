@@ -1,26 +1,23 @@
 <template>
-    <section> 
-        <h1> 
-            Error 404
-        </h1>
-        <nuxt-link to="/">
-            Home
-        </nuxt-link>
-    </section>
+  <section>
+    <div>
+      <h1>Error 404</h1>
+      <nuxt-link to="/"> Home </nuxt-link>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-section{
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    width: 768px;
-    margin: 0 auto;
-    padding-top: 5rem;
+section {
+  display: flex;
+  height: 100vh;
 }
-h1{
-    color: red;
+div {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  color: red;
 }
 </style>

@@ -1,0 +1,11 @@
+diff a/components/popup/popup.vue b/components/popup/popup.vue	(rejected hunks)
+@@ -1,7 +1,7 @@
+ <template>
+   <transition name="fade" appear>
+-    <div class="popup">
+-      <div class="content">
++    <div class="popup" ref="popup">
++      <div class="content" ref="content">
+         <span class="content__close" @click="closePopup">×</span>
+ 
+         <div class="content__wrap">
